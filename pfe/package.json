@@ -1,7 +1,9 @@
 {
-  "name": "demo",
+  "name": "pfe",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://MOU3AD.github.io/pfe" ,
+
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "@tailwindcss/vite": "^4.1.13",
@@ -19,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

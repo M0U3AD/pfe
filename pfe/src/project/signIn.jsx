@@ -1,7 +1,12 @@
 import { FcGoogle } from "react-icons/fc";
-export default function Sign(props){
+import { MdArrowBackIos } from "react-icons/md";
+import Home from './home'
+import { useState } from "react";
+import Right from "./right";
+export default function Sign({onBack}){
     return(
         <div className="bg-white px-10 py-20 rounded-3xl shadow-xl ">
+            <button className="flex items-center" onClick={onBack}><MdArrowBackIos /><span className="text-[#3F7D58]">Go Back!</span></button>
             <h1 className="text-5xl font-semibold  ">Welcom Back </h1>
             <p className="font-medium text-lg text-gray-500 mt-4">Welcom back! please enter your details </p>
             <div className="mt-8">
@@ -14,7 +19,7 @@ export default function Sign(props){
             <div>
                 <label className="text-base font-medium" >Password</label>
                 <input
-                className="w-full border-2 border-gray-200 rounded-xl py-2  focus:border-[#3F7D58]  outline-none "
+                className="w-full border-2 border-gray-200 rounded-xl py-2  focus:borderC outline-none "
                 type="password" 
                 placeholder="Enter your password" required/>
             </div>
@@ -36,7 +41,9 @@ export default function Sign(props){
                 <p className="font-medium text-base">Don't have an account?</p>
                 <button className="text-[#3F7D58] font-medium ml-2">Sign up</button>
             </div>
+            
         </div>
+        
 
     )
 }

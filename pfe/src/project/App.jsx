@@ -1,17 +1,18 @@
 import SignIn from './signIn'
 import './App.css';
 import baga from './elements/image.jpg'
+import { useState } from 'react';
+import Home from './home';
+import Right from './right';
 
 function App() {
+    const [view, setView] = useState("home");
   return (
-    <div className="flex w-full h-screen">
-      <div className="w-full flex items-center justify-center lg:w-1/2">
-       <SignIn/>
-    </div>
-      <div className="hidden lg:flex w-1/2 h-full items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: `url(${baga})` }}></div>
-    </div>
-  );
+    <>
+        {view === "home" && <Home onSign={() => setView("sign")} />}
+        {view === "sign" && <Right onBack={() => setView("home")} />}
+    </>
+  )
 }
 
 export default App;
